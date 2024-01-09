@@ -1,17 +1,24 @@
-import { Radio, TextField, Typography } from "@mui/material";
+import {
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography,
+  FormLabel,
+} from "@mui/material";
 
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 
 const CreateNote = () => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputDetails, setInputDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [radioCategory, setRadioCategory] = useState("todos");
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -31,6 +38,7 @@ const CreateNote = () => {
     if (inputDetails && inputTitle) {
       console.log("title:", inputTitle);
       console.log("Details:", inputDetails);
+      console.log("radioCategory:", radioCategory);
     }
   };
 
@@ -54,7 +62,7 @@ const CreateNote = () => {
           fullWidth
           required
           error={titleError}
-          sx={{ mt: 2, mb: 3 }}
+          sx={{ mt: 0, mb: 2 }}
         />
 
         <TextField
@@ -67,31 +75,61 @@ const CreateNote = () => {
           fullWidth
           required
           error={detailsError}
-          sx={{ mt: 2, mb: 3 }}
+          sx={{ mt: 1, mb: 1 }}
         />
 
-        <RadioGroup>
+        <FormControl sx={{ display: "block", mt: 1, mb: 1 }}>
+          <FormLabel>Note Category</FormLabel>
+
+          <RadioGroup
+            value={radioCategory}
+            onChange={(e) => setRadioCategory(e.target.value)}
+          >
+            <FormControlLabel
+              label="Money"
+              value="money"
+              control={<Radio color="secondary" />}
+            />
+            <FormControlLabel
+              label="Todos"
+              value="todos"
+              control={<Radio color="secondary" />}
+            />
+            <FormControlLabel
+              label="Reminder"
+              value="reminder"
+              control={<Radio color="secondary" />}
+            />
+            <FormControlLabel
+              label="Work"
+              value="work"
+              control={<Radio color="secondary" />}
+            />
+          </RadioGroup>
+        </FormControl>
+
+        {/** <RadioGroup sx={{ mb: 2 }}>
           <FormControlLabel
             control={<Radio color="secondary" />}
-            label="money"
+            label="Money"
             value="money"
           />
           <FormControlLabel
             control={<Radio color="secondary" />}
-            label="todos"
+            label="Todos"
             value="todos"
           />
           <FormControlLabel
             control={<Radio color="secondary" />}
-            label="reminders"
+            label="Reminders"
             value="reminders"
           />
           <FormControlLabel
             control={<Radio color="secondary" />}
-            label="work"
+            label="Work"
             value="work"
           />
-        </RadioGroup>
+        </RadioGroup> */}
 
         <Button
           color="secondary"
