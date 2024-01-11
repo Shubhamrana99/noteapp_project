@@ -2,6 +2,7 @@ import React from "react";
 import Drawer from "@mui/material/Drawer";
 import {
   AppBar,
+  Avatar,
   Box,
   List,
   ListItem,
@@ -15,6 +16,7 @@ import {
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router";
 import { format } from "date-fns";
+import { deepOrange } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -51,7 +53,7 @@ const LayOut = ({ children }) => {
             {" "}
             Today is the {format(new Date(), "d MMMM Y")}
           </Typography>
-          <Typography> const</Typography>
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>S</Avatar>
         </Toolbar>
       </AppBar>
 
