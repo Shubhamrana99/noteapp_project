@@ -70,7 +70,7 @@ const LayOut = ({ children }) => {
         variant="permanent"
         anchor="left"
       >
-        <Typography variant="h3" sx={{ padding: 2, fontWeight: 580 }}>
+        <Typography variant="h3" sx={{ padding: 2, fontWeight: 590 }}>
           Genius Notes
         </Typography>
 
