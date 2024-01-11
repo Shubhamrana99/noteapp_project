@@ -3,6 +3,7 @@ import NotePage from "./pages/NotePage";
 import CreateNote from "./pages/CreateNote";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { green } from "@mui/material/colors";
+import LayOut from "./Componentes/LayOut";
 
 const theme = createTheme({
   palette: {
@@ -15,10 +16,12 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path="/" element={<NotePage />} />
-          <Route path="/createnote" element={<CreateNote />} />
-        </Routes>
+        <LayOut>
+          <Routes>
+            <Route path="/" element={<NotePage />} />
+            <Route path="/createnote" element={<CreateNote />} />
+          </Routes>
+        </LayOut>
       </ThemeProvider>
     </div>
   );
