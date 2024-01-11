@@ -35,12 +35,6 @@
       "details": "Hit the gym for a workout session. Focus on cardio and strength training. Duration: 1 hour.",
       "category": "health",
       "id": 6
-    },
-    {
-      "id": "9692",
-      "title": "my name is title",
-      "details": "and I am details of your note bro",
-      "category": "reminder"
     }
   ]
 }

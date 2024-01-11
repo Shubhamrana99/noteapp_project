@@ -23,7 +23,7 @@ const NoteCard = ({ note, handleDeleteditem }) => {
                 handleDeleteditem(id);
               }}
             >
-              <DeleteOutline />
+              <DeleteOutline color="secondary" />
             </IconButton>
           }
           title={title}
