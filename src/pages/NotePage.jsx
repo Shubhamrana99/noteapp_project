@@ -1,15 +1,23 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import NoteCard from "../Componentes/NoteCard";
 import Masonry from "react-masonry-css";
+import axios from "axios";
 
 const NotePage = () => {
   const [notes, setNotes] = useState([]);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/notes")
+  //     .then((res) => res.json())
+  //     .then((data) => setNotes(data))
+  //     .catch((err) => console.error(err));
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:8000/notes")
-      .then((res) => res.json())
-      .then((data) => setNotes(data))
+    axios
+      .get("http://localhost:8000/notes")
+      .then((res) => setNotes(res.data))
       .catch((err) => console.error(err));
   }, []);
 
