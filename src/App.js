@@ -7,7 +7,7 @@ import LayOut from "./Componentes/LayOut";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#fefefe" },
+    primary: { main: "#007E33" },
     secondary: green,
   },
 });

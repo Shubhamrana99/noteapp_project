@@ -49,7 +49,9 @@ const LayOut = ({ children }) => {
         variant="permanent"
         anchor="left"
       >
-        <Typography variant="h3">Genius Notes</Typography>
+        <Typography variant="h3" sx={{ padding: 2, fontWeight: 550 }}>
+          Genius Notes
+        </Typography>
 
         <List>
           {sideBarItems.map((item) => {

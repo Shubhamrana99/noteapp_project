@@ -13,7 +13,7 @@ const NoteCard = ({ note, handleDeleteditem }) => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{}}>
         <CardHeader
           action={
             <IconButton
