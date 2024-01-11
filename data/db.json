@@ -1,28 +1,40 @@
 {
-    "notes": [
-      {
-        "title": "Akashdeep birthday bash",
-        "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "category": "reminders",
-        "id": 1
-      },
-      {
-        "title": "Complete my MUI training",
-        "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
-        "category": "work",
-        "id": 2
-      },
-      {
-        "title": "Order a Laptop!",
-        "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "category": "todos",
-        "id": 3
-      },
-      {
-        "title": "Buy some vegetables",
-        "details": "Buy Vegetables ",
-        "category": "todos",
-        "id": 4
-      }
-    ]
-  }
+  "notes": [
+    {
+      "title": "Akashdeep birthday bash",
+      "details": "Celebrating Akashdeep's birthday with friends and family on Saturday. Venue: XYZ Club. Time: 7:00 PM.",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Complete my MUI training",
+      "details": "Finish MUI (Material-UI) training modules by Friday. Check for any pending assignments and quizzes.",
+      "category": "work",
+      "id": 2
+    },
+    {
+      "title": "Order a Laptop!",
+      "details": "Place an order for a new laptop with the following specifications: Processor: Intel Core i7, RAM: 16GB, Storage: 512GB SSD.",
+      "category": "todos",
+      "id": 3
+    },
+    {
+      "title": "Buy some vegetables",
+      "details": "Purchase vegetables for the week: tomatoes, onions, spinach, carrots.",
+      "category": "todos",
+      "id": 4
+    },
+    {
+      "title": "Meeting with Team",
+      "details": "Schedule a team meeting for project updates and collaboration. Choose a suitable time for everyone.",
+      "category": "work",
+      "id": 5
+    },
+    {
+      "title": "Gym Session",
+      "details": "Hit the gym for a workout session. Focus on cardio and strength training. Duration: 1 hour.",
+      "category": "health",
+      "id": 6
+    }
+  ]
+}

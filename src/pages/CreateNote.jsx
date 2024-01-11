@@ -12,33 +12,43 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useNavigate } from "react-router";
 
 const CreateNote = () => {
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputDetails, setInputDetails] = useState("");
+  const [title, setInputTitle] = useState("");
+  const [details, setInputDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
-  const [radioCategory, setRadioCategory] = useState("todos");
+  const [category, setRadioCategory] = useState("todos");
+  const navigate = useNavigate();
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    if (inputTitle === "") {
+    if (title === "") {
       setTitleError(true);
     } else {
       setTitleError(false);
     }
 
-    if (inputDetails === "") {
+    if (details === "") {
       setDetailsError(true);
     } else {
       setDetailsError(false);
     }
 
-    if (inputDetails && inputTitle) {
-      console.log("title:", inputTitle);
-      console.log("Details:", inputDetails);
-      console.log("radioCategory:", radioCategory);
+    if (details && title) {
+      // fetch("http://localhost:8000/notes", {
+      //   method: "POST",
+      //   headers: { "Content-type": "Application/json" },
+      //   body: JSON.stringify({ title, details, category }),
+      // }).then(() => navigate("/"));
+
+      fetch("http://localhost:8000/notes", {
+        method: "POST",
+        headers: { "Content-type": "Application/json" },
+        body: JSON.stringify({ title, details, category }),
+      }).then(() => navigate("/"));
     }
   };
 
@@ -82,7 +92,7 @@ const CreateNote = () => {
           <FormLabel>Note Category</FormLabel>
 
           <RadioGroup
-            value={radioCategory}
+            value={category}
             onChange={(e) => setRadioCategory(e.target.value)}
           >
             <FormControlLabel
