@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router";
+import { format } from "date-fns";
 
 const drawerWidth = 240;
 
@@ -46,7 +47,10 @@ const LayOut = ({ children }) => {
         }}
       >
         <Toolbar>
-          <Typography sx={{ flexGrow: 1 }}> This is my note App</Typography>
+          <Typography sx={{ flexGrow: 1 }}>
+            {" "}
+            Today is the {format(new Date(), "d MMMM Y")}
+          </Typography>
           <Typography> const</Typography>
         </Toolbar>
       </AppBar>
