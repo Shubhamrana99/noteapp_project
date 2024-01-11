@@ -6,12 +6,31 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
+  ListItemText,
   Typography,
 } from "@mui/material";
+import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
+import { useLocation, useNavigate } from "react-router";
 
 const drawerWidth = 240;
 
+const sideBarItems = [
+  {
+    text: "My Notes",
+    icon: <SubjectOutlined color="secondary" />,
+    path: "/",
+  },
+  {
+    text: "Create Notes",
+    icon: <AddCircleOutlineOutlined color="secondary" />,
+    path: "/createnote",
+  },
+];
+
 const LayOut = ({ children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <box sx={{ display: "flex" }}>
       {/*nav-bar */}
@@ -33,11 +52,26 @@ const LayOut = ({ children }) => {
         <Typography variant="h3">Genius Notes</Typography>
 
         <List>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-            </ListItemButton>
-          </ListItem>
+          {sideBarItems.map((item) => {
+            const { text, icon, path } = item;
+            return (
+              <ListItem
+                key={text}
+                onClick={() => navigate(path)}
+                sx={{
+                  ...(location.pathname === path
+                    ? { backgroundColor: "#f9f9f9" }
+                    : null),
+                }}
+                disablePadding
+              >
+                <ListItemButton>
+                  <ListItemIcon>{icon}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
       </Drawer>
 
