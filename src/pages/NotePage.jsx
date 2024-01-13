@@ -8,7 +8,7 @@ const NotePage = () => {
   const [notes, setNotes] = useState([]);
 
   // useEffect(() => {
-  //   fetch("http://localhost:8000/notes")
+  //   fetch("https://noteappdata.onrender.com/notes")
   //     .then((res) => res.json())
   //     .then((data) => setNotes(data))
   //     .catch((err) => console.error(err));
@@ -16,13 +16,13 @@ const NotePage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/notes")
+      .get("https://noteappdata.onrender.com/notes")
       .then((res) => setNotes(res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const handleDeleteditem = async (deletedNoteId) => {
-    await fetch("http://localhost:8000/notes/" + deletedNoteId, {
+    await fetch("https://noteappdata.onrender.com/notes/" + deletedNoteId, {
       method: "DELETE",
     });
     const newNotes = notes.filter(({ id }) => id !== deletedNoteId);
