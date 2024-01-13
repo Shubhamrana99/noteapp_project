@@ -38,13 +38,13 @@ const CreateNote = () => {
     }
 
     if (details && title) {
-      // fetch("https://noteappdata.onrender.com/notes", {
+      // fetch("https://noteapp-data.onrender.com/notes", {
       //   method: "POST",
       //   headers: { "Content-type": "Application/json" },
       //   body: JSON.stringify({ title, details, category }),
       // }).then(() => navigate("/"));
 
-      fetch("https://noteappdata.onrender.com/notes", {
+      fetch("https://noteapp-data.onrender.com/notes", {
         method: "POST",
         headers: { "Content-type": "Application/json" },
         body: JSON.stringify({ title, details, category }),

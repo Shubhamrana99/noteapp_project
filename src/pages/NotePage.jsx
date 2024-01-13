@@ -8,7 +8,7 @@ const NotePage = () => {
   const [notes, setNotes] = useState([]);
 
   // useEffect(() => {
-  //   fetch("https://noteappdata.onrender.com/notes")
+  //   fetch("https://noteapp-data.onrender.com/notes")
   //     .then((res) => res.json())
   //     .then((data) => setNotes(data))
   //     .catch((err) => console.error(err));
@@ -16,23 +16,23 @@ const NotePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://noteappdata.onrender.com/notes")
+      .get("https://noteapp-data.onrender.com/notes")
       .then((res) => setNotes(res.data))
       .catch((err) => console.error(err));
   }, []);
 
-  const handleDeleteditem = async (deletedNoteId) => {
-    await fetch("https://noteappdata.onrender.com/notes/" + deletedNoteId, {
-      method: "DELETE",
-    });
-    const newNotes = notes.filter(({ id }) => id !== deletedNoteId);
-    setNotes([...newNotes]);
-  };
-
-  // const handleDeleteditem = (deletedId) => {
-  //   const newNotes = notes.filter(({ id }) => id !== deletedId);
+  // const handleDeleteditem = async (deletedNoteId) => {
+  //   await fetch("https://noteapp-data.onrender.com/notes/" + deletedNoteId, {
+  //     method: "DELETE",
+  //   });
+  //   const newNotes = notes.filter(({ id }) => id !== deletedNoteId);
   //   setNotes([...newNotes]);
   // };
+
+  const handleDeleteditem = (deletedId) => {
+    const newNotes = notes.filter(({ id }) => id !== deletedId);
+    setNotes([...newNotes]);
+  };
 
   const breakpoints = {
     default: 3,
