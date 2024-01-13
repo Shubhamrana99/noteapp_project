@@ -33,6 +33,7 @@
     {
       "title": "Gym Session",
       "details": "Hit the gym for a workout session. Focus on cardio and strength training. Duration: 1 hour.",
+      "category": "reminders",
       "id": 6
     }
   ]
